@@ -5,6 +5,7 @@ const routes = express.Router();
 
 routes.use("/users", users);
 routes.use("/user", user);
+
 routes.use("/", (req, res) => {
   res
     .status(200)

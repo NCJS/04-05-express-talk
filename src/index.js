@@ -4,6 +4,11 @@ import chalk from "chalk";
 require("dotenv").config();
 import { searchFirstName } from "./utils";
 import routes from "./routes";
+import data from "./data";
+
+data.map(d => {
+  d.msg = [];
+});
 
 const app = express();
 

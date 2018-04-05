@@ -1,7 +1,17 @@
 import express from "express";
 import data from "../../data";
 import { find, findIndex } from "lodash";
+import messages from "./msg";
 const user = express.Router();
+
+user.use(
+  "/:id/msg",
+  (req, res, next) => {
+    req.userID = req.params.id; // attaches :id parameter to req {}
+    next();
+  },
+  messages
+);
 
 user.get("/:id", (req, res) => {
   const { params } = req;
